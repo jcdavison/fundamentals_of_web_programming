@@ -1,0 +1,9 @@
+ruby '2.3.0'
+
+source 'https://rubygems.org'
+
+gem 'sinatra', '~> 1.4', '>= 1.4.7'
+gem 'datamapper', '~> 1.2'
+gem 'dm-sqlite-adapter'
+gem 'rerun', '~> 0.11.0'
+gem 'json', '~> 1.8', '>= 1.8.3'

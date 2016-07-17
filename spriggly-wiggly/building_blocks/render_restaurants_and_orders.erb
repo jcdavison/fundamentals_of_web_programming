@@ -1,0 +1,38 @@
+<%# step 1 render all the restaurants %>
+<% restaurants.each do |restaurant| %>
+  <div class='restaurant-display-tile'>
+    <p> Restaurant id: <%= restaurant.id %> '<%= restaurant.name %>' located at '<%= restaurant.location %>' </p>
+    <p>has <%= restaurant.orders.count %> order(s).</p>
+  </div>
+<% end %>
+
+
+<%# step 2 allow each restaurant to render a new form %>
+<form action='/restaurants/<%= restaurant.id %>' method='POST' class='pull-right'>
+  <input type='hidden' name='_method' value='DELETE'/>
+  <button type='submit' class='super-sport'>X</button>
+</form>
+
+
+<%# step 3 render each restaurants orders %>
+<% restaurant.orders.each do |order| %>
+  <h4>
+    Order id: <%= order.id %> is '<%= order.description %>'
+  </h4>
+<% end %>
+
+
+<%# step 4 render a form element to allow each order to be destroyed %>
+<form action='/orders' method='POST' class='inline' >
+  <input type='hidden' name='order_id' value='<%= order.id %>'>
+  <input type='hidden' name='_method' value='DELETE'>
+  <input type='submit' value='destroy order' class='super-sport'>
+</form>
+
+
+<%# step 5 render a form element to create a new order for a restaurant %>
+<form action='/orders' method='POST' class='centered' >
+  <input type='text' name='description' required />
+  <input type='hidden' name='restaurant_id' value='<%= restaurant.id %>'>
+  <input type='submit' value='create order' class='super-sport'>
+</form>

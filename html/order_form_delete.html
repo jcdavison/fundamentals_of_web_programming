@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>let's order some food!</title>
+    <style>
+      p, h1, h2, h3 {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #157DA6;
+        text-align: center;
+      }
+      .centered {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>food delivery bing bing!</h1>
+    <h3>using an 'http  DELETE request'</h3>
+    <p> the current order is 'waffles'</p>
+    <form action='http://localhost:3001/order_delete' method='POST' class='centered'>
+      <input type="hidden" name="deleted_order" value="waffles" />
+      <input type="hidden" name="_method" value="DELETE" />
+      <input type='submit' value='delete order' />
+    </form>
+  </body>
+</html>

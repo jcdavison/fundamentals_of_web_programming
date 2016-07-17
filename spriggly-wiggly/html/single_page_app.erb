@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Spriggly-Wiggly</title>
+    <link rel='stylesheet' href='/css/single_page_app_style.css' type='text/css' ></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Spriggly-Wiggly.io</h1>
+    <h1>We Serve(er) Foodz!</h1>
+    <h3>look at our restaurants</h3>
+    <div id="restaurants"></div>
+    <div class='centered action-tile'>
+      <form id='newRestaurant'>
+        <input id='newRestaurantName' type='text' placeholder='name' required />
+        <input id='newRestaurantLocation' type='text' placeholder='location' required />
+        <button type='submit' class='super-sport'>create new restaurant</button>
+      </form>
+    </div>
+
+    <div class='centered action-tile'>
+      <form id='newOrder'>
+        <input id='newOrderDescription' type='text' placeholder='your order here' required />
+        <select id='restaurantIds'>
+        </select>
+        <button type='submit' class='super-sport'>create new order</button>
+      </form>
+    </div>
+    <script src='/js/single_page_app.js' type="text/javascript" ></script>
+  </body>
+</html>

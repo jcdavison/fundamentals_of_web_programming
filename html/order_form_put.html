@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>let's order some food!</title>
+    <style>
+      p, h1, h2, h3 {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #157DA6;
+        text-align: center;
+      }
+      .centered {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>food delivery bing bing!</h1>
+    <h3>using an 'http  PUT request'</h3>
+    <p> the current order is 'waffles'</p>
+    <form action='http://localhost:3001/order_update' method='POST' class='centered'>
+      <input type='text' name='order_update' />
+      <input type="hidden" name="_method" value="PUT" />
+      <input type='submit' value='submit order update' />
+    </form>
+  </body>
+</html>
