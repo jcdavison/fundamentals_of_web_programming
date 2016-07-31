@@ -1,0 +1,28 @@
+<%# all orders for an individual restaurant %>
+<% restaurant.orders.each do |order| %>
+  <h4>
+    Order id: <%= order.id %> is '<%= order.description %>'
+  </h4>
+<% end %>
+
+<%# a form to create a new order %>
+<form action='/orders' method='POST' class='centered' >
+  <input type='text' name='description' required />
+  <input type='hidden' name='restaurant_id' value='<%= restaurant.id %>'>
+  <input type='submit' value='create order' class='super-sport'>
+</form>
+
+<%# a form to update an existing order %>
+<form action='/orders/<%= order.id %>' method='POST' class='centered'>
+  <label>description</label>
+  <input type='text' name='description' required value='<%= order.description %>' />
+  <input type='hidden' name='_method' value='PUT'>
+  <input type='submit' value='edit order' />
+</form>
+
+<%# a form that allows an order to be destroyed %>
+<form action='/orders' method='POST' class='inline' >
+  <input type='hidden' name='order_id' value='<%= order.id %>'>
+  <input type='hidden' name='_method' value='DELETE'>
+  <input type='submit' value='destroy order' class='super-sport'>
+</form>

@@ -1,8 +1,10 @@
+# delete restaurant
 delete('/restaurants/:id') do
   Restaurant.get(params[:id]).destroy
   redirect('/')
 end
 
+# delete order
 delete('/orders') do
   order_to_delete = Order.get(params[:order_id])
   order_to_delete.destroy

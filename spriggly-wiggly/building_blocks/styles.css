@@ -24,6 +24,11 @@ p, h1, h2, h3, h4, ul, li, a {
   border: 1px solid #157DA6;
   border-radius: 5px;
   cursor: pointer;
+  color: black;
+  font-size: 12px;
+  font-weight: normal;
+  text-decoration: none;
+  padding: 5px;
 }
 
 .inline {

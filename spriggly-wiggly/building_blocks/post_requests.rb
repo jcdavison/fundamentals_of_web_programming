@@ -1,3 +1,4 @@
+# create a new restaurant
 post('/restaurants') do
   new_restaurant = Restaurant.new
   new_restaurant.name = params[:name]
@@ -6,6 +7,7 @@ post('/restaurants') do
   redirect('/')
 end
 
+# create a new order
 post('/orders') do
   new_order = Order.new
   new_order.description = params[:description]

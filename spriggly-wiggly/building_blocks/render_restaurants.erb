@@ -1,0 +1,35 @@
+<%# all restaurants %>
+<% restaurants.each do |restaurant| %>
+  <div class='restaurant-display-tile'>
+    <p> Restaurant id: <%= restaurant.id %> '<%= restaurant.name %>' located at '<%= restaurant.location %>' </p>
+    <p>has <%= restaurant.orders.count %> order(s).</p>
+  </div>
+<% end %>
+
+<%# a link that routes to an edit restaurant form %>
+<a href='/restaurants/<%= restaurant.id %>/edit'>edit restaurant</a>
+
+<%# a form that can create a new restaurant %>
+<form action='/restaurants' method='POST' class='centered'>
+  <label>name</label>
+  <input type='text' name='name' required/>
+  <label>location</label>
+  <input type='text' name='location' required/>
+  <input type='submit' value='create new restaurant' />
+</form>
+
+<%# a form that edits an existing restaurant %>
+<form action='/restaurants/<%= restaurant.id %>' method='post' class='centered'>
+  <label>name</label>
+  <input type='text' name='name' required value='<%= restaurant.name %>' />
+  <label>location</label>
+  <input type='text' name='location' value='<%= restaurant.location %>' required/>
+  <input type='hidden' name='_method' value='put'>
+  <input type='submit' value='edit restaurant' />
+</form>
+
+<%# a form that deletes an existing restaurant%>
+<form action='/restaurants/<%= restaurant.id %>' method='POST' class='pull-right'>
+  <input type='hidden' name='_method' value='DELETE'/>
+  <button type='submit' class='super-sport'>X</button>
+</form>

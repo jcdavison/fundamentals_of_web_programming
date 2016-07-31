@@ -1,16 +1,25 @@
 # syncronous endpoints
 
+# application root
 get('/') do
   restaurants = Restaurant.all
   erb(:index, locals: { restaurants: restaurants })
 end
 
-get('/single_page_app') do
-  erb(:single_page_app)
-end
-
+# render a create restaurant form
 get('/restaurants/create') do
   erb(:create_restaurant)
+end
+
+# render the restaurant of concern to the browser
+get('/restaurants/:id/edit') do
+  restaurant = Restaurant.get(params[:id])
+  render(:edit_restaurant, locals: { restaurant: restaurant })
+end
+
+# single page app
+get('/single_page_app') do
+  erb(:single_page_app)
 end
 
 # asyncronous endpoints
