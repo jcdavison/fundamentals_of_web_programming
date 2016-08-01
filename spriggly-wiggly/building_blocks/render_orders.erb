@@ -12,6 +12,9 @@
   <input type='submit' value='create order' class='super-sport'>
 </form>
 
+<%# a link to visit a page that will render an update order form %>
+<a href='/orders/<%= order.id %>/edit' class='super-sport'>edit order</a>
+
 <%# a form to update an existing order %>
 <form action='/orders/<%= order.id %>' method='POST' class='centered'>
   <label>description</label>

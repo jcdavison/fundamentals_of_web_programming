@@ -17,6 +17,12 @@ get('/restaurants/:id/edit') do
   render(:edit_restaurant, locals: { restaurant: restaurant })
 end
 
+# render the order of concern to the browser
+get('/orders/:id/edit') do
+  order = Order.get(params[:id])
+  erb(:edit_order, locals: { order: order })
+end
+
 # single page app
 get('/single_page_app') do
   erb(:single_page_app)
